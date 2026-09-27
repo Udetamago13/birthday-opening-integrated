@@ -156,13 +156,27 @@ body.mobilePortrait #rotateGate{display:flex}
 #integratedGameUI .ig-age-message{min-height:1.55em;margin-top:.45em;color:#c72d35;font-size:clamp(15px,1.7vw,23px);font-weight:800}
 #integratedGameUI .ig-age-message.ig-special{color:#704322}
 @keyframes igThoughtFloat{0%,100%{transform:translate3d(-2px,2px,0) rotate(-.35deg) scale(1)}45%{transform:translate3d(4px,-5px,0) rotate(.45deg) scale(1.012)}72%{transform:translate3d(0,1px,0) rotate(.12deg) scale(.997)}}
-/* Smartphone boot profile. Desktop geometry and controls stay on the original path. */
-body.smartphoneMode{overscroll-behavior:none;-webkit-text-size-adjust:100%}
+/* Smartphone browser profile. Keep the desktop 16:9 composition and scale it,
+   rather than turning it into a large-type mobile page. */
+body.smartphoneMode{overscroll-behavior:none;-webkit-text-size-adjust:none;text-size-adjust:none}
 body.smartphoneMode .gate{padding:max(14px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left))}
-body.smartphoneMode #integratedGameUI .ig-thought-screen{padding:2% 4%;touch-action:manipulation}
-body.smartphoneMode #integratedGameUI .ig-thought-wrap{width:90%;height:88%;min-height:0;max-height:94%}
-body.smartphoneMode #integratedGameUI .ig-thought-content{width:84%;max-width:none}
-body.smartphoneMode #integratedGameUI .ig-card{width:92%;max-height:88%;padding:16px 22px}
+body.smartphoneMode #integratedGameUI .ig-thought-screen{touch-action:manipulation}
+body.smartphoneMode #integratedGameUI .ig-thought-wrap{width:70.3125cqw;height:auto;min-height:36.71875cqw;max-height:none}
+body.smartphoneMode #integratedGameUI .ig-thought-content{width:82%;max-width:none;font-size:clamp(12px,2.35cqw,36px)}
+body.smartphoneMode #integratedGameUI .ig-thought-shape path{stroke-width:clamp(3px,.55cqw,7px)}
+body.smartphoneMode #integratedGameUI .ig-thought-tail{border-width:clamp(1.5px,.235cqw,3px)}
+body.smartphoneMode #integratedGameUI .ig-thought-tail.t1{width:3.516cqw;height:3.047cqw;left:calc(50% - 1.72cqw)}
+body.smartphoneMode #integratedGameUI .ig-thought-tail.t2{width:2.109cqw;height:1.875cqw;left:calc(50% - .78cqw)}
+body.smartphoneMode #integratedGameUI .ig-thought-tail.t3{width:1.094cqw;height:1.016cqw}
+body.smartphoneMode #integratedGameUI .ig-age-bare{font-size:clamp(20px,4.65cqw,60px)}
+body.smartphoneMode #integratedGameUI .ig-age-unit{font-size:clamp(15px,3cqw,40px)}
+body.smartphoneMode #integratedGameUI .ig-age-message{font-size:clamp(11px,1.7cqw,23px)}
+body.smartphoneMode #integratedGameUI .ig-card{width:min(59.375cqw,86%);max-height:82%;padding:2.1875cqw 2.65625cqw;border-width:clamp(1.5px,.235cqw,3px);border-radius:1.5625cqw}
+body.smartphoneMode #integratedGameUI .ig-card h2{font-size:clamp(17px,3.3cqw,46px);margin-bottom:1.40625cqw}
+body.smartphoneMode #integratedGameUI .ig-card p{font-size:clamp(11px,1.7cqw,23px);margin:.78125cqw 0}
+body.smartphoneMode #integratedGameUI .ig-card.ig-fail-card{width:min(67.1875cqw,92%)}
+body.smartphoneMode #integratedGameUI .ig-card.ig-fail-card h2{font-size:clamp(13px,3.05cqw,43px)}
+body.smartphoneMode #integratedGameUI .ig-btn{font-size:clamp(11px,1.5cqw,21px)}
 body.smartphoneMode #integratedGameUI .ig-btn,
 body.smartphoneMode #integratedBlackout .ig-black-actions button{min-height:44px;touch-action:manipulation}
 body.smartphoneMode #integratedGameCanvas{touch-action:none}
@@ -405,8 +419,20 @@ body.smartphoneMode #galleryRoom .gallery-player-buttons{width:100%;height:52px;
 body.smartphoneMode #galleryRoom .gallery-player-buttons button{width:30%;min-width:44px;height:44px;min-height:44px;touch-action:manipulation}
 @media(pointer:coarse){#galleryRoom .gallery-frame:hover{transform:none;filter:none}}
 @media(prefers-reduced-motion:reduce){#galleryRoom .gallery-player.disc-active .gallery-disc{animation-duration:9s}#galleryRoom .gallery-exit-lamp img{animation-duration:12.8s}}
+/* Late smartphone overrides use the 16:9 frame as their measuring stick. */
+body.smartphoneMode #titleStart,body.smartphoneMode #galleryOpen{font-size:clamp(18px,4.05cqw,51.84px)}
+body.smartphoneMode #title.gallery-unlocked #titleStart{bottom:max(14.5%,calc(4.1% + 4.1cqw))}
+body.smartphoneMode #integratedCountdown{font-size:16cqw}
+body.smartphoneMode #integratedGameUI .ig-clear-title{font-size:10cqw}
+body.smartphoneMode #integratedGameUI .ig-clear-detail{font-size:2.2cqw}
+body.smartphoneMode #integratedGameUI .ig-cut-title{font-size:4.4cqw}
+body.smartphoneMode #integratedGameUI .ig-cut-rank{font-size:8cqw}
+body.smartphoneMode #integratedGameUI .ig-cut-rank-long{font-size:4.3cqw}
+body.smartphoneMode #integratedGameUI .ig-cut-rainbow{font-size:5cqw}
+body.smartphoneMode #integratedBlackout .ig-black-actions p{font-size:3cqw}
+body.smartphoneMode #integratedBlackout .ig-black-actions button{font-size:clamp(12px,2cqw,25px)}
 </style></head><body>
-<div id="rotateGate"><div class="rotateInner"><span class="phoneIcon">▯</span><b>横画面にしてください</b><p>スマートフォンでは横画面で固定して遊びます。端末を横向きにしてください。</p></div></div>
+<div id="rotateGate"><div class="rotateInner"><span class="phoneIcon">▯</span><b>横画面にしてください</b><p>端末を横向きにすると、そのままブラウザで遊べます。</p></div></div>
 <section id="passwordGate" class="gate"><form id="passwordForm" class="panel"><p class="eyebrow">A PRIVATE INVITATION</p><h1>PASSWORD</h1><input id="password" class="entry" type="password" inputmode="numeric" autocomplete="off" aria-label="Password" placeholder="Enter password" enterkeyhint="go"><p id="passwordError" class="note error" role="alert"></p><button class="submit" type="submit">CONTINUE</button><p id="assetStatus" class="note"></p></form></section>
 <section id="nameGate" class="gate hidden"><form id="nameForm" class="panel"><p class="eyebrow">BEFORE THE STORY BEGINS</p><h1>YOUR NAME</h1><input id="playerName" class="entry" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Your name" placeholder="Enter your name" enterkeyhint="go"><p class="note"><span id="nameCount">0</span> / 100 characters · 25 per line</p><div id="namePreview" class="namePreview" aria-hidden="true"></div><p id="nameError" class="note error" role="alert"></p><button id="begin" class="submit" type="submit">BEGIN</button><button id="back" class="back" type="button">BACK</button></form></section>
 <section id="returnStartGate" class="gate hidden" aria-label="Start"><button id="returnStartButton" class="returnStartButton" type="button">START</button></section>
@@ -4741,8 +4767,8 @@ async function __makeCakeFly(canvas){
  }
  camera.position.set(0,0,8);camera.lookAt(0,0,0);
 
- const renderer=new mo({canvas,alpha:!0,antialias:!0,powerPreference:"default",failIfMajorPerformanceCaveat:!1});
- renderer.setPixelRatio(1);renderer.setSize(960,540,!1);renderer.outputColorSpace=ft;renderer.setClearColor(0x000000,0);
+ const renderer=new mo({canvas,alpha:!0,antialias:!1,powerPreference:"high-performance",failIfMajorPerformanceCaveat:!1});
+ renderer.setPixelRatio(1);renderer.setSize(640,360,!1);renderer.outputColorSpace=ft;renderer.setClearColor(0x000000,0);
  if(!renderer.domElement||renderer.domElement!==canvas)throw new Error("3D fly renderer did not bind to the overlay canvas");
 
  scene.add(new er(16777215,4210752,3.8));
@@ -4765,6 +4791,14 @@ async function __makeCakeFly(canvas){
  }
 
  __cakeFly={canvas,scene,camera,renderer,items,order,fov,aspect};
+ // Precompile/upload while the DOM canvas is hidden. The roots must be
+ // render-visible for Three.js to traverse their materials during compile.
+ try{
+  for(const it of items){it.root.visible=true;it.root.position.set(0,0,-4);it.root.scale.setScalar(.001)}
+  renderer.compile(scene,camera);renderer.render(scene,camera);
+  for(const it of items){it.root.visible=false;it.root.scale.setScalar(1)}
+  renderer.clear()
+ }catch{for(const it of items)it.root.visible=false}
  window.__TITLE_MODEL_DIAG.flyReady=true;
  window.__TITLE_MODEL_DIAG.flyCamera={type:camera.type,isPerspectiveCamera:!!camera.isPerspectiveCamera,near:camera.near,far:camera.far};
  window.__TITLE_MODEL_DIAG.flyCanvas={width:canvas.width,height:canvas.height};
@@ -4775,8 +4809,7 @@ async function __prepareCakeFly(canvas){
  await __makeCakeFly(canvas);
  return {ready:true,order:__cakeFly.order.map(x=>x+1)}
 }
-async function __renderCakeFly(canvas,time,duration=5.55){
- const f=await __makeCakeFly(canvas);
+function __drawCakeFly(f,time,duration=5.55){
  const tanHalf=Math.tan((f.fov*Math.PI/180)/2);
  let allDone=true;
 
@@ -4807,6 +4840,14 @@ async function __renderCakeFly(canvas,time,duration=5.55){
 
  f.renderer.render(f.scene,f.camera);
  return {done:allDone,order:f.order.map(x=>x+1)}
+}
+async function __renderCakeFly(canvas,time,duration=5.55){
+ const f=await __makeCakeFly(canvas);
+ return __drawCakeFly(f,time,duration)
+}
+function __renderPreparedCakeFly(canvas,time,duration=5.55){
+ if(!__cakeFly||__cakeFly.canvas!==canvas)return null;
+ return __drawCakeFly(__cakeFly,time,duration)
 }
 function __resetCakeFly(){
  if(__cakeFly){
@@ -4866,7 +4907,7 @@ function __resetUfoCredit(){
  if(!__ufoCredit)return;const u=__ufoCredit;__ufoCredit=null;
  try{u.scene.traverse(q=>{q.geometry?.dispose?.();(q.material?Array.isArray(q.material)?q.material:[q.material]:[]).forEach(m=>m?.dispose?.())});u.renderer.dispose();u.renderer.forceContextLoss()}catch{}
 }
-function Vu(i,e,t,n){let s=[],r=[];for(let l=0;l<=100;l++){let c=-40+l*.8;for(let h of[-1,1])s.push(i(c)+h*e,n,c);if(l<100){let h=l*2;r.push(h,h+2,h+1,h+1,h+2,h+3)}}let a=new Tt;a.setAttribute("position",new vt(s,3)),a.setIndex(r),a.computeVertexNormals();let o=new Mt(a,new gn({color:t,roughness:1,side:Vt}));return o.receiveShadow=!0,o}window.TitleScene={palette:n0,preload:i0,webglStatus:__webglStatus,bakeAsset:__bakeExternalModel,prepareFly:__prepareCakeFly,flyFrame:__renderCakeFly,resetFly:__resetCakeFly,prepareUfo:__prepareUfoCredit,ufoFrame:__renderUfoCredit,resetUfo:__resetUfoCredit,ufoPoseApi:6,ufoEmbeddedBytes:__UFO_GLB_B64.length,async draw(i){if(xr)return xr;xr=this.render(i);try{return await xr}finally{xr=null}},async render(i){
+function Vu(i,e,t,n){let s=[],r=[];for(let l=0;l<=100;l++){let c=-40+l*.8;for(let h of[-1,1])s.push(i(c)+h*e,n,c);if(l<100){let h=l*2;r.push(h,h+2,h+1,h+1,h+2,h+3)}}let a=new Tt;a.setAttribute("position",new vt(s,3)),a.setIndex(r),a.computeVertexNormals();let o=new Mt(a,new gn({color:t,roughness:1,side:Vt}));return o.receiveShadow=!0,o}window.TitleScene={palette:n0,preload:i0,webglStatus:__webglStatus,bakeAsset:__bakeExternalModel,prepareFly:__prepareCakeFly,flyFrame:__renderCakeFly,flyFramePrepared:__renderPreparedCakeFly,resetFly:__resetCakeFly,prepareUfo:__prepareUfoCredit,ufoFrame:__renderUfoCredit,resetUfo:__resetUfoCredit,ufoPoseApi:6,ufoEmbeddedBytes:__UFO_GLB_B64.length,async draw(i){if(xr)return xr;xr=this.render(i);try{return await xr}finally{xr=null}},async render(i){
  let e=await i0(),t=Math.random()*Math.PI*2;
  i.width=384;i.height=216;
  let g=i.getContext("2d");
@@ -4966,10 +5007,33 @@ three/build/three.module.js:
 <script>
 'use strict';
 const CFG={"password": "20260930", "visualFile": "op.mp4", "titleMusic": "title.mp3",  "titleMusicStart": 54.8, "clipStart": 0, "blackFade": 0, "titleMusicVolume": 0.4, "whiteFade": 1.5, "camera": [{"id": "3sk73pjeryn", "label": "カメラ移動", "start": 5.5944444444444485, "end": 9.677777777777786, "startView": {"x": 0, "y": 0, "w": 1280}, "endView": {"x": 497.80310433722934, "y": 236.57698245262932, "w": 274.21188300472335}, "fadeIn": {"on": true, "dur": 0.5}, "fadeOut": {"on": true, "dur": 0.5}}, {"id": "8ks6vhplu2u", "label": "カメラ移動", "start": 9.71944444444445, "end": 14.233333333333336, "startView": {"x": 499.57495050173674, "y": 236.77347261535775, "w": 267.1811687052592}, "endView": {"x": 365.7295614748842, "y": 380.28072802152707, "w": 556.0172214062495}, "fadeIn": {"on": true, "dur": 0.5}, "fadeOut": {"on": true, "dur": 0.5}}, {"id": "jso55cx01p8", "label": "カメラ移動", "start": 15.65098039215687, "end": 25.572549019607834, "startView": {"x": 353.6575084990636, "y": 378.3605328708398, "w": 577.8052659831898}, "endView": {"x": 0, "y": 0, "w": 1280}, "fadeIn": {"on": true, "dur": 0.5}, "fadeOut": {"on": true, "dur": 0.5}}], "playerBlocks": [{"id": "4f8ad726tgh", "start": 4.919444444444451, "end": 15.488888888888896, "contentMode": "player", "role": "制作", "text": "レーラァ", "staffLayout": "vertical", "lineGap": 6, "roleScale": 72, "fontWeight": 700, "textOpacity": 100, "showImage": false, "imageMode": "letter", "imageData": null, "imagePos": "left", "imageScale": 38, "gap": 10, "x": 501.04403655570667, "y": 266.49763352377926, "w": 277.5203915171289, "h": 104.6205193244777, "fontSize": 70, "color": "#000000", "stroke": "#000", "strokeW": 1, "baked": true, "rx": 0, "ry": 0, "rz": 0, "perspective": 900, "fadeIn": {"on": true, "dur": 0.45}, "fadeOut": {"on": true, "dur": 0.45}}]};
+const AUDIO_MIX_STORAGE_KEY='birthdayCakeRoad.audioMix.v2';
+const AUDIO_MIX_DEFAULTS=Object.freeze({
+ 'title.mp3':.0631,'1.mp3':.0617,'2.mp3':.061,'3.mp3':.0724,'4.mp3':.0684,'5.mp3':.0624,'6.mp3':.0741,
+ '810a.mp3':.0933,'810b.mp3':.1109,'clear.mp3':.0966,'cut.mp3':.0989,'alien.mp3':.1175,
+ 'ed1.mp3':.0966,'ed2.mp3':.1216,'ed3.mp3':.1084,'ed810.mp3':.138,'gameover.mp3':.2265,
+ 'bike.mp3':.4467,'handle.mp3':.3162,'derail.mp3':.4786,'paper.mp3':1,'start.mp3':.0385,
+ 'option.mp3':.2985,'bar.mp3':.195,'board.mp3':.4786,'pen.mp3':.507,'paint.mp3':.166,
+ 'cake1.mp3':9.5499,'cake2.mp3':1.7378,'cake3.mp3':.9333,'810.mp3':.7413,
+ 'countdown.tick':2.851,'countdown.go':1.2882
+});
+function loadAudioMixOverrides(){
+ try{
+  const raw=JSON.parse(localStorage.getItem(AUDIO_MIX_STORAGE_KEY)||'null');
+  if(!raw||typeof raw!=='object')return {};
+  const out={};for(const [key,value] of Object.entries(raw)){const n=Number(value);if(key in AUDIO_MIX_DEFAULTS&&Number.isFinite(n))out[key]=Math.max(0,Math.min(100,n))}return out
+ }catch{return {}}
+}
+const AUDIO_MIX_OVERRIDES=loadAudioMixOverrides();
+function audioMixGain(key,fallback=1){
+ const value=Object.prototype.hasOwnProperty.call(AUDIO_MIX_OVERRIDES,key)?AUDIO_MIX_OVERRIDES[key]:(Object.prototype.hasOwnProperty.call(AUDIO_MIX_DEFAULTS,key)?AUDIO_MIX_DEFAULTS[key]:fallback),n=Number(value);
+ return Number.isFinite(n)?Math.max(0,Math.min(100,n)):fallback
+}
+window.BirthdayAudioMix={storageKey:AUDIO_MIX_STORAGE_KEY,defaults:AUDIO_MIX_DEFAULTS,overrides:AUDIO_MIX_OVERRIDES,gain:audioMixGain};
 const CAKE_FLY_START=66.0;
 const CAKE_FLY_SPEED=1.2;
 const CAKE_FLY_FALLBACK_END=68.55;
-let cakeFlyBusy=false,cakeFlyFailed=false,cakeFlyPrimed=false;
+let cakeFlyBusy=false,cakeFlyFailed=false,cakeFlyPrimed=false,cakeFlyLastPaint=0,cakeFlyMaxGap=0;
 const $=id=>document.getElementById(id),v=$('visual'),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 let state='password',runtimeName='',composing=false,raf=0,frameCallback=0,whiteStart=null,token=0,noticeTimer,titleNameEditing=false;
 let autoOpMutedFallback=false,pendingTitleMusicOffset=null;
@@ -5002,7 +5066,7 @@ opSkipAllowed=loadOpSeen();
 let audioContext=null,musicBuffer=null,musicSource=null,musicGain=null,musicOffset=0,musicStartedAt=0,musicPrimed=false,musicWanted=false,titleReady=false,videoReady=false,titleMusicBlocked=false;
 let titleModelsReady=false,titleModelsError='',titleModelsPromise=null;
 const objectURLs=[];
-const titleAudio=new Audio();titleAudio.preload='auto';titleAudio.loop=true;titleAudio.playsInline=true;titleAudio.volume=((window.BirthdayFlow?.bgmVolume ?? 1)*(CFG.titleMusicVolume??1));let audioStarting=false;
+const titleAudio=new Audio();titleAudio.preload='auto';titleAudio.loop=true;titleAudio.playsInline=true;titleAudio.volume=Math.min(1,(window.BirthdayFlow?.bgmVolume ?? 1)*audioMixGain('title.mp3',CFG.titleMusicVolume??1));let audioStarting=false;
 function titleMusicAllowed(){return !titleMusicBlocked&&!window.__BIRTHDAY_INTEGRATED_ACTIVE&&!window.__BIRTHDAY_GALLERY_ACTIVE&&(state==='op'||state==='title')}
 titleAudio.addEventListener('loadedmetadata',()=>{musicBuffer={duration:titleAudio.duration};assetStatus()});
 titleAudio.addEventListener('canplay',()=>{musicBuffer={duration:titleAudio.duration};assetStatus()});
@@ -5029,7 +5093,7 @@ function playMusic(offset){
  if(offset!=null&&Number.isFinite(titleAudio.duration)&&titleAudio.duration>0){
   titleAudio.currentTime=((offset%titleAudio.duration)+titleAudio.duration)%titleAudio.duration
  }
- titleAudio.volume=((window.BirthdayFlow?.bgmVolume ?? 1)*(CFG.titleMusicVolume??1));
+ titleAudio.volume=Math.min(1,(window.BirthdayFlow?.bgmVolume ?? 1)*audioMixGain('title.mp3',CFG.titleMusicVolume??1));
  audioStarting=true;
  titleAudio.play().then(()=>{musicSource=true;pendingTitleMusicOffset=null;if(titleAudio.volume>0)window.BirthdayGallery?.markBgmHeard?.('title.mp3')}).catch(e=>{
   console.warn('title.mp3 play blocked/failed',e);
@@ -5053,7 +5117,7 @@ async function unlockTitleAudio(){
  const ready=await waitTitleAudioReady();
  if(!ready)return false;
  try{
-  titleAudio.muted=true;titleAudio.volume=((window.BirthdayFlow?.bgmVolume ?? 1)*(CFG.titleMusicVolume??1));
+  titleAudio.muted=true;titleAudio.volume=Math.min(1,(window.BirthdayFlow?.bgmVolume ?? 1)*audioMixGain('title.mp3',CFG.titleMusicVolume??1));
   await titleAudio.play();titleAudio.pause();titleAudio.currentTime=0;
   return true
  }catch(e){console.warn('title.mp3 unlock failed',e);return false}
@@ -5146,48 +5210,30 @@ function updateOpTimer(){
  if(active)el.textContent=(Math.floor((v.currentTime+1e-6)*10)/10).toFixed(1)+' s'
 }
 
-function syncCakeFly(){
+function primeCakeFlyEarly({retry=false}={}){
  const c=$('cakeFlyCanvas');
- if(!c)return;
- const t=v.currentTime||0;
- const end=Number.isFinite(v.duration)&&v.duration>CAKE_FLY_START+1?Math.min(v.duration-.08,CAKE_FLY_FALLBACK_END):CAKE_FLY_FALLBACK_END;
-
- // Prepare early. A prewarm failure is NOT permanent; 63.0s gets one clean retry.
- if(state==='op'&&t>=60.5&&t<CAKE_FLY_START&&!cakeFlyPrimed&&!cakeFlyBusy&&window.TitleScene?.prepareFly){
-  cakeFlyBusy=true;
-  TitleScene.prepareFly(c).then(()=>{
-   cakeFlyPrimed=true;cakeFlyFailed=false;
-  }).catch(e=>{
-   cakeFlyPrimed=false;
-   console.error('cake fly prewarm failed; will retry at 63s',e,window.__TITLE_MODEL_DIAG);
-  }).finally(()=>cakeFlyBusy=false)
- }
-
- const active=state==='op'&&t>=CAKE_FLY_START&&t<end;
- c.classList.toggle('hidden',!active);
- if(!active)return;
- if(!window.TitleScene?.flyFrame||cakeFlyBusy)return;
-
- cakeFlyBusy=true;
- TitleScene.flyFrame(c,(t-CAKE_FLY_START)*CAKE_FLY_SPEED,end-CAKE_FLY_START).then(info=>{
-  cakeFlyPrimed=true;cakeFlyFailed=false;
-  if(window.__TITLE_MODEL_DIAG){
-   window.__TITLE_MODEL_DIAG.flyLastFrame={time:t,local:t-CAKE_FLY_START,flyTime:(t-CAKE_FLY_START)*CAKE_FLY_SPEED,speed:CAKE_FLY_SPEED,info};
-  }
- }).catch(async e=>{
-  console.error('63s cake fly render failed; resetting once',e,window.__TITLE_MODEL_DIAG);
-  try{
-   window.TitleScene?.resetFly?.();
-   cakeFlyPrimed=false;
-   await TitleScene.prepareFly(c);
-   cakeFlyPrimed=true;
-   await TitleScene.flyFrame(c,(t-CAKE_FLY_START)*CAKE_FLY_SPEED,end-CAKE_FLY_START);
-   cakeFlyFailed=false;
-  }catch(e2){
-   cakeFlyFailed=true;c.classList.add('hidden');
-   console.error('63s cake fly retry failed',e2,window.__TITLE_MODEL_DIAG);
-  }
+ if(!c||!window.TitleScene?.prepareFly||cakeFlyBusy||cakeFlyPrimed)return Promise.resolve(cakeFlyPrimed);
+ if(cakeFlyFailed&&!retry)return Promise.resolve(false);
+ cakeFlyBusy=true;c.width=640;c.height=360;
+ return TitleScene.prepareFly(c).then(()=>{
+  cakeFlyPrimed=true;cakeFlyFailed=false;return true
+ }).catch(e=>{
+  cakeFlyPrimed=false;cakeFlyFailed=true;console.error('cake fly prewarm failed',e,window.__TITLE_MODEL_DIAG);return false
  }).finally(()=>cakeFlyBusy=false)
+}
+function syncCakeFly(){
+ const c=$('cakeFlyCanvas');if(!c)return;
+ const t=v.currentTime||0,end=Number.isFinite(v.duration)&&v.duration>CAKE_FLY_START+1?Math.min(v.duration-.08,CAKE_FLY_FALLBACK_END):CAKE_FLY_FALLBACK_END;
+ const active=state==='op'&&t>=CAKE_FLY_START&&t<end;c.classList.toggle('hidden',!active);
+ if(!active){cakeFlyLastPaint=0;return}
+ const flyTime=(t-CAKE_FLY_START)*CAKE_FLY_SPEED,duration=end-CAKE_FLY_START;
+ if(cakeFlyPrimed&&window.TitleScene?.flyFramePrepared){
+  try{
+   const info=TitleScene.flyFramePrepared(c,flyTime,duration);
+   if(info){const now=performance.now();if(cakeFlyLastPaint)cakeFlyMaxGap=Math.max(cakeFlyMaxGap,now-cakeFlyLastPaint);cakeFlyLastPaint=now;if(window.__TITLE_MODEL_DIAG)window.__TITLE_MODEL_DIAG.flyLastFrame={time:t,local:t-CAKE_FLY_START,flyTime,speed:CAKE_FLY_SPEED,maxFrameGapMs:+cakeFlyMaxGap.toFixed(1),info};return}
+  }catch(e){cakeFlyPrimed=false;cakeFlyFailed=true;window.TitleScene?.resetFly?.();console.error('prepared cake fly frame failed',e,window.__TITLE_MODEL_DIAG)}
+ }
+ if(!cakeFlyBusy)primeCakeFlyEarly({retry:true});
 }
 
 function animate(now){updateOpTimer();syncCakeFly();if(state==='op'){if(!v.requestVideoFrameCallback)paintOP(v.currentTime);$('blackVeil').style.opacity=CFG.blackFade>0?clamp(1-v.currentTime/CFG.blackFade,0,1):0;syncMusic()}if(state==='title'){if(!window.__BIRTHDAY_GALLERY_ACTIVE){watchTitleRoad(now);updateTitleOverlayScale();drawTitleClouds(now);drawSunTitle(now);drawHandTitle(now);if(whiteStart!==null){$('whiteVeil').style.opacity=clamp(1-(now-whiteStart)/(CFG.whiteFade*1000),0,1)}}}else if(window.__BIRTHDAY_INTEGRATED_ACTIVE){updateTitleOverlayScale();drawSunTitle(now)}else{syncTitleNameHitRect()}raf=requestAnimationFrame(animate)}
@@ -5235,7 +5281,11 @@ async function startOpening({userInitiated=false}={}){
    if(!audioUnlocked)console.warn('title.mp3 was not unlocked during BEGIN; resume overlay will be used if the browser blocks later playback.');
   }
   if(thisToken!==token)return false;
-  if(window.TitleScene?.resetFly)TitleScene.resetFly();cakeFlyBusy=false;cakeFlyFailed=false;cakeFlyPrimed=false;$('cakeFlyCanvas').classList.add('hidden');
+  // Keep the hidden, precompiled renderer alive. Recreating it here made the
+  // visible fly-in pay shader compilation and model upload costs.
+  if(cakeFlyFailed&&!cakeFlyBusy){window.TitleScene?.resetFly?.();cakeFlyPrimed=false;cakeFlyFailed=false}
+  if(!cakeFlyPrimed&&!cakeFlyBusy)primeCakeFlyEarly({retry:true});
+  cakeFlyLastPaint=0;cakeFlyMaxGap=0;$('cakeFlyCanvas').classList.add('hidden');
   state='op';setTabTitle(false);$('opTimer').textContent='0.0 s';$('opTimer').classList.remove('hidden');$('passwordGate').classList.add('hidden');$('nameGate').classList.add('hidden');$('returnStartGate').classList.add('hidden');$('stage').classList.remove('hidden');$('controls').classList.remove('hidden');$('resume').classList.add('hidden');
   $('title').classList.add('hidden');$('blackVeil').style.opacity=0;$('whiteVeil').style.opacity=0;
   stopMusic(true);musicWanted=false;whiteStart=null;pendingTitleMusicOffset=null;autoOpMutedFallback=false;try{v.currentTime=0}catch{}buildNames();paintOP(0);prepareTitle();
@@ -5310,7 +5360,9 @@ function skipOpeningByGesture(){
 }
 function reset(){
  token++;$('cakeFlyCanvas').classList.add('hidden');if(window.TitleScene?.resetFly)TitleScene.resetFly();$('opTimer').classList.add('hidden');$('opTimer').textContent='0.0 s';try{v.pause();v.currentTime=0;v.muted=false}catch{}stopMusic(true);musicWanted=false;autoOpMutedFallback=false;pendingTitleMusicOffset=null;whiteStart=null;if($('titleHandCanvas'))$('titleHandCanvas').getContext('2d').clearRect(0,0,$('titleHandCanvas').width,$('titleHandCanvas').height);if($('titleSunCanvas'))$('titleSunCanvas').getContext('2d').clearRect(0,0,$('titleSunCanvas').width,$('titleSunCanvas').height);$('titleNameEditor')?.classList.add('hidden');titleNameEditorOpen=false;titleNameWasEdited=false;$('mainGameHost')?.classList.add('hidden');HAND_TITLE.mode='idle';setTitleStartVisible(false);$('stage').classList.add('hidden');$('nameGate').classList.add('hidden');$('passwordGate').classList.add('hidden');$('returnStartGate').classList.add('hidden');$('controls').classList.add('hidden');$('resume').classList.add('hidden');$('password').value='';$('passwordError').textContent='';$('pause').textContent='PAUSE';dispatchEvent(new CustomEvent('birthday:reset'));
+ cakeFlyBusy=false;cakeFlyPrimed=false;cakeFlyFailed=false;cakeFlyLastPaint=0;cakeFlyMaxGap=0;
  routeInitialFlow();
+ preloadTitleModels().then(ok=>{if(ok)primeCakeFlyEarly({retry:true})});
 }
 function updateName(){if(composing)return;const input=$('playerName');input.value=nameValue(input.value);$('nameCount').textContent=gs(input.value).length;const preview=$('namePreview');preview.replaceChildren();for(const line of nameLines(input.value)){const el=document.createElement('span');el.textContent=line;preview.appendChild(el)}let fs=48;const maxW=Math.max(1,preview.clientWidth-24);do{preview.style.fontSize=fs+'px';if([...preview.children].every(line=>line.scrollWidth<=maxW))break;fs--}while(fs>=8)}
 $('password').onkeydown=e=>{if(e.key==='Enter'&&e.isComposing)e.preventDefault()};
@@ -5356,7 +5408,7 @@ const UI_SE_FILES={
  ex:'810.mp3',
  paint:'paint.mp3'
 };
-const UI_SE_GAIN={start:.3,paint:.5,cake1:100,cake2:100,cake3:100,ex:8};
+const UI_SE_GAIN=Object.fromEntries(Object.entries(UI_SE_FILES).map(([key,file])=>[key,audioMixGain(file,1)]));
 const UI_SE={};
 for(const [key,file] of Object.entries(UI_SE_FILES)){
  const a=new Audio(file);
@@ -5369,8 +5421,8 @@ let uiBarLastAt=0;
 let uiBarLastLevel=null;
 let uiSeAudioContext=null;
 let uiSeBoostOutput=null;
-const UI_SE_BOOST_KEYS=new Set(['cake1','cake2','cake3','ex']);
-const uiSeBuffers=new Map(),uiSeBufferPromises=new Map(),uiSeBoostSources=new Map();
+const UI_SE_BOOST_KEYS=new Set(Object.keys(UI_SE_FILES).filter(key=>(UI_SE_GAIN[key]??1)>1));
+const uiSeBuffers=new Map(),uiSeBufferPromises=new Map(),uiSeBoostSources=new Map(),uiSeMediaNodes=new Map();
 
 function ensureUiSeContext(){
  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;
@@ -5399,9 +5451,19 @@ function primeBoostedUiSe(){
 function playBoostedUiSe(key,level,restart=true){
  const ac=ensureUiSeContext(),buffer=uiSeBuffers.get(key);if(!ac||!buffer||ac.state!=='running')return false;
  try{
-  if(restart){const old=uiSeBoostSources.get(key);try{old?.stop()}catch{}}
+  if(restart){const old=uiSeBoostSources.get(key);try{old?.stop()}catch{}try{UI_SE[key]?.pause()}catch{}}
   const source=ac.createBufferSource(),gain=ac.createGain();source.buffer=buffer;gain.gain.value=Math.max(0,level*(UI_SE_GAIN[key]??1));source.connect(gain).connect(uiSeBoostOutput||ac.destination);source.onended=()=>{if(uiSeBoostSources.get(key)===source)uiSeBoostSources.delete(key)};uiSeBoostSources.set(key,source);source.start();return true;
  }catch(e){console.warn('Boosted SE playback failed',key,e);return false}
+}
+function playBoostedUiSeMedia(key,level,restart=true){
+ const ac=ensureUiSeContext(),a=UI_SE[key];if(!ac||!a)return false;
+ try{
+  let node=uiSeMediaNodes.get(key);
+  if(!node){const source=ac.createMediaElementSource(a),gain=ac.createGain();source.connect(gain).connect(uiSeBoostOutput||ac.destination);node={source,gain};uiSeMediaNodes.set(key,node)}
+  node.gain.gain.value=Math.max(0,level*(UI_SE_GAIN[key]??1));a.volume=1;a.loop=false;
+  if(restart){const old=uiSeBoostSources.get(key);try{old?.stop()}catch{}a.pause();a.currentTime=0}
+  const p=a.play();p?.catch?.(()=>{});return true
+ }catch(e){console.warn('Media-element SE boost unavailable',key,e);return false}
 }
 
 function uiSeVolume(){
@@ -5422,6 +5484,7 @@ function playUiSE(key,{restart=true}={}){
   try{const resumed=uiSeAudioContext?.resume?.();resumed?.catch?.(()=>{})}catch{}
   if(playBoostedUiSe(key,level,restart))return;
   loadBoostedUiSe(key);
+  if(playBoostedUiSeMedia(key,level,restart))return;
  }
  try{
   a.volume=Math.max(0,Math.min(1,level*(UI_SE_BOOST_KEYS.has(key)?1:(UI_SE_GAIN[key]??1))));
@@ -6416,7 +6479,7 @@ async function prepareTitle(){
  }
 }
 addEventListener('resize',()=>{updateName();updateTitleOverlayScale();syncTitleNameHitRect();if(titleNameEditorOpen)applyTitleNameNoticeLayout();if(state==='op'&&v.paused)paintOP(lastPresentedTime)});
-loadSunGroupTune();handTitleInit();bindTitleTool();bindSunTitlePlacement();bindTitleNameEditor();applyTitleTune();updateTitleOverlayScale();syncTitleNameHitRect();preloadSunTitleAssets();preloadTitleCloudAssets();v.src=CFG.visualFile;titleAudio.src=CFG.titleMusic;titleAudio.load();assetStatus();preloadTitleModels();raf=requestAnimationFrame(animate);
+loadSunGroupTune();handTitleInit();bindTitleTool();bindSunTitlePlacement();bindTitleNameEditor();applyTitleTune();updateTitleOverlayScale();syncTitleNameHitRect();preloadSunTitleAssets();preloadTitleCloudAssets();v.src=CFG.visualFile;titleAudio.src=CFG.titleMusic;titleAudio.load();assetStatus();preloadTitleModels().then(ok=>{if(ok)primeCakeFlyEarly()});raf=requestAnimationFrame(animate);
 
 
 
@@ -6852,7 +6915,7 @@ function optDrawBar(ctx,key,b,alpha){
 function optApplyAudio(){
  const audible=optionState.bgmMuted?0:optClamp(optionState.bgmLevel,0,1);
  v.volume=audible;
- titleAudio.volume=audible*(CFG.titleMusicVolume??1);
+ titleAudio.volume=Math.min(1,audible*audioMixGain('title.mp3',CFG.titleMusicVolume??1));
  v.muted=false;titleAudio.muted=false;
  const seAudible=optionState.seMuted?0:optClamp(optionState.seLevel,0,1);
  if(typeof UI_SE!=='undefined'){
@@ -7180,12 +7243,9 @@ function setupLandscapeMode(){
 
  window.BirthdayFlow.tryLandscape=async()=>{
   if(!mobileLike)return true;
-  try{
-   if(document.documentElement.requestFullscreen && !document.fullscreenElement){
-    await document.documentElement.requestFullscreen({navigationUI:'hide'}).catch(()=>{});
-   }
-   if(screen.orientation?.lock)await screen.orientation.lock('landscape').catch(()=>{});
-  }catch{}
+  // A hosted HTML game runs in Safari/Chrome like any other web page. Do not
+  // force fullscreen/orientation: support varies and it can steal the gesture
+  // needed to unlock audio. The player rotates the device; we only gate portrait.
   update();
   return !document.body.classList.contains('mobilePortrait');
  };
@@ -7350,16 +7410,21 @@ function setEndingPalette(key){ending.classList.remove(...ENDING_COLOR_CLASSES);
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 function gameSeVolume(){return Math.max(0,Math.min(1,Number(window.BirthdayFlow?.seVolume ?? 1)||0))}
 function gameBgmVolume(){return Math.max(0,Math.min(1,Number(window.BirthdayFlow?.bgmVolume ?? 1)||0))}
+function audioElementFile(a){
+ if(!a)return '';
+ const tagged=a.dataset?.galleryFile||a.dataset?.track;if(tagged)return String(tagged).split('/').pop();
+ try{return new URL(a.currentSrc||a.src,document.baseURI).pathname.split('/').pop()||''}catch{return ''}
+}
 function setMusicGain(a,gain){if(!a)return;const g=clamp(Number(gain)||0,0,1);musicGains.set(a,g);try{a.volume=gameBgmVolume()*g}catch{}}
 function cancelMusicFade(a){if(!a)return;musicFadeTokens.set(a,(musicFadeTokens.get(a)||0)+1)}
-function playManagedMusic(a,{restart=true,loop=false,gain=1}={}){if(!a)return null;cancelMusicFade(a);try{a.loop=loop;if(restart){a.pause();a.currentTime=0}setMusicGain(a,gain);const p=a.play(),file=a.dataset.galleryFile||a.dataset.track;if(p?.then)p.then(()=>{if(file&&a.volume>0)window.BirthdayGallery?.markBgmHeard?.(file)}).catch(()=>{});else if(file&&a.volume>0)window.BirthdayGallery?.markBgmHeard?.(file);return a}catch{return null}}
+function playManagedMusic(a,{restart=true,loop=false,gain=1}={}){if(!a)return null;cancelMusicFade(a);try{a.loop=loop;if(restart){a.pause();a.currentTime=0}const file=audioElementFile(a),effective=clamp((Number(gain)||0)*audioMixGain(file,1),0,1);setMusicGain(a,effective);const p=a.play(),galleryFile=a.dataset.galleryFile||a.dataset.track;if(p?.then)p.then(()=>{if(galleryFile&&a.volume>0)window.BirthdayGallery?.markBgmHeard?.(galleryFile)}).catch(()=>{});else if(galleryFile&&a.volume>0)window.BirthdayGallery?.markBgmHeard?.(galleryFile);return a}catch{return null}}
 function stopManagedMusic(a,reset=true){if(!a)return;cancelMusicFade(a);try{a.pause();if(reset)a.currentTime=0}catch{}setMusicGain(a,1)}
 function fadeManagedMusic(a,to=0,ms=600,pauseAtEnd=true){
  if(!a)return Promise.resolve();const token=(musicFadeTokens.get(a)||0)+1;musicFadeTokens.set(a,token);const from=musicGains.get(a)??1,start=performance.now();
  return new Promise(resolve=>{const tick=now=>{if(musicFadeTokens.get(a)!==token){resolve();return}const p=clamp((now-start)/Math.max(1,ms),0,1),q=p*p*(3-2*p);setMusicGain(a,from+(to-from)*q);if(p<1)requestAnimationFrame(tick);else{if(pauseAtEnd&&to<=0){try{a.pause();a.currentTime=0}catch{}}resolve()}};requestAnimationFrame(tick)});
 }
 function syncGameAudio(){
- const vol=gameSeVolume();for(const a of Object.values(GAME_AUDIO))try{a.volume=vol}catch{}
+ const vol=gameSeVolume();for(const [key,a] of Object.entries(GAME_AUDIO))try{a.volume=Math.min(1,vol*audioMixGain(GAME_AUDIO_FILES[key],1))}catch{}
  for(const a of [raceAudio,...Object.values(MUSIC_AUDIO)])try{a.volume=gameBgmVolume()*(musicGains.get(a)??1)}catch{}
  const bike=GAME_AUDIO.bike;if(!bike)return;
  if(IG.rideAudioWanted&&['play','clear'].includes(IG.state)&&vol>0){bike.loop=true;const p=bike.play();p?.catch?.(()=>{})}
@@ -7368,12 +7433,12 @@ function syncGameAudio(){
 function startRideAudio(){IG.rideAudioWanted=true;const a=GAME_AUDIO.bike;try{a.pause();a.currentTime=0;a.loop=true}catch{}syncGameAudio()}
 function stopRideAudio(reset=true){IG.rideAudioWanted=false;const a=GAME_AUDIO.bike;try{a.pause();if(reset)a.currentTime=0}catch{}}
 function stopGameSE(except=''){for(const [key,a] of Object.entries(GAME_AUDIO)){if(key===except||key==='bike')continue;try{a.pause();a.currentTime=0}catch{}}}
-function playGameSE(key,{restart=true}={}){const a=GAME_AUDIO[key];if(!a)return null;try{a.volume=gameSeVolume();a.loop=false;if(restart){a.pause();a.currentTime=0}const p=a.play();p?.catch?.(()=>{});return a}catch{return null}}
+function playGameSE(key,{restart=true}={}){const a=GAME_AUDIO[key];if(!a)return null;try{a.volume=Math.min(1,gameSeVolume()*audioMixGain(GAME_AUDIO_FILES[key],1));a.loop=false;if(restart){a.pause();a.currentTime=0}const p=a.play();p?.catch?.(()=>{});return a}catch{return null}}
 function playGameSEToEnd(key,fallbackMs){
  const a=GAME_AUDIO[key];if(!a)return wait(fallbackMs);
- return new Promise(resolve=>{let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);a.removeEventListener('ended',finish);a.removeEventListener('error',onError);resolve()};const onError=()=>{};const timer=setTimeout(finish,fallbackMs+900);a.addEventListener('ended',finish,{once:true});a.addEventListener('error',onError,{once:true});try{a.pause();a.currentTime=0;a.loop=false;a.volume=gameSeVolume();const p=a.play();p?.catch?.(()=>{})}catch{};});
+ return new Promise(resolve=>{let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);a.removeEventListener('ended',finish);a.removeEventListener('error',onError);resolve()};const onError=()=>{};const timer=setTimeout(finish,fallbackMs+900);a.addEventListener('ended',finish,{once:true});a.addEventListener('error',onError,{once:true});try{a.pause();a.currentTime=0;a.loop=false;a.volume=Math.min(1,gameSeVolume()*audioMixGain(GAME_AUDIO_FILES[key],1));const p=a.play();p?.catch?.(()=>{})}catch{};});
 }
-const NORMAL_RACE_BGM_GAIN=.8;
+const NORMAL_RACE_BGM_GAIN=1;
 function selectRaceTrack(roll=Math.random()){const r=clamp(Number(roll)||0,0,.999999);return IG.mode==='ex'?`810${r<.5?'a':'b'}.mp3`:`${1+Math.floor(r*6)}.mp3`}
 function startRaceBgm(){const file=selectRaceTrack();stopManagedMusic(raceAudio);raceAudio.src=file;raceAudio.dataset.track=file;playManagedMusic(raceAudio,{restart:true,loop:false,gain:IG.mode==='ex'?1:NORMAL_RACE_BGM_GAIN});return file}
 function stopRaceBgm(immediate=true){return immediate?(stopManagedMusic(raceAudio),Promise.resolve()):fadeManagedMusic(raceAudio,0,520,true)}
@@ -8069,7 +8134,7 @@ async function playEnding(key,{fromGallery=false,forceSkip=false}={}){
 }
 
 function countdownTone(go=false){
- const vol=gameSeVolume();if(vol<=0)return;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;const ac=IG.tickAudioContext||(IG.tickAudioContext=new AC);ac.resume?.();const osc=ac.createOscillator(),gain=ac.createGain(),now=ac.currentTime,amp=go?0.13:0.085,dur=go?.84:.13;osc.type=go?'sine':'triangle';osc.frequency.setValueAtTime(go?880:520,now);if(go)osc.frequency.linearRampToValueAtTime(940,now+.7);gain.gain.setValueAtTime(.0001,now);gain.gain.linearRampToValueAtTime(Math.max(.0001,vol*amp),now+.018);if(go){gain.gain.setValueAtTime(Math.max(.0001,vol*amp),now+.64);gain.gain.exponentialRampToValueAtTime(.0001,now+dur)}else gain.gain.exponentialRampToValueAtTime(.0001,now+dur);osc.connect(gain).connect(ac.destination);osc.start(now);osc.stop(now+dur+.01)}catch{}
+ const vol=gameSeVolume();if(vol<=0)return;try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;const ac=IG.tickAudioContext||(IG.tickAudioContext=new AC);ac.resume?.();if(!IG.tickLimiter){const limiter=ac.createDynamicsCompressor();limiter.threshold.value=-3;limiter.knee.value=8;limiter.ratio.value=6;limiter.attack.value=.003;limiter.release.value=.18;limiter.connect(ac.destination);IG.tickLimiter=limiter}const osc=ac.createOscillator(),gain=ac.createGain(),now=ac.currentTime,mix=audioMixGain(go?'countdown.go':'countdown.tick',1),amp=(go?0.13:0.085)*mix,dur=go?.84:.13;osc.type=go?'sine':'triangle';osc.frequency.setValueAtTime(go?880:520,now);if(go)osc.frequency.linearRampToValueAtTime(940,now+.7);gain.gain.setValueAtTime(.0001,now);gain.gain.linearRampToValueAtTime(Math.max(.0001,vol*amp),now+.018);if(go){gain.gain.setValueAtTime(Math.max(.0001,vol*amp),now+.64);gain.gain.exponentialRampToValueAtTime(.0001,now+dur)}else gain.gain.exponentialRampToValueAtTime(.0001,now+dur);osc.connect(gain).connect(IG.tickLimiter);osc.start(now);osc.stop(now+dur+.01)}catch{}
 }
 function waitForVideoEnd(video,timeout=25000){return new Promise(resolve=>{let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);video.removeEventListener('ended',finish);video.removeEventListener('error',finish);resolve()};const timer=setTimeout(finish,timeout);video.addEventListener('ended',finish,{once:true});video.addEventListener('error',finish,{once:true})})}
 async function playOutcomeVideo(file){
@@ -8171,14 +8236,15 @@ function integratedSelfTest(){
  const pure=evaluateRideResult(18,'ride',[18,0,0],0,0,'clear'),mixed=evaluateRideResult(18,'ride',[17,1,0],0,0,'clear'),out=evaluateRideResult(18,'ride',[18,0,0],0,0,'time'),exWin=evaluateRideResult(114514,'ex',[0,0,0],81,0,'clear'),exMiss=evaluateRideResult(114514,'ex',[0,0,0],80,1,'clear');
  check('clear-rules',pure.win&&!mixed.win&&!out.win&&exWin.win&&!exMiss.win,JSON.stringify({pure:pure.win,mixed:mixed.win,courseout:out.win,ex:exWin.win,exMiss:exMiss.win}));
  const oldMode=IG.mode,rolls=[0,.17,.34,.51,.68,.85,.999999];IG.mode='ride';const normalTracks=rolls.map(selectRaceTrack);IG.mode='ex';const exTracks=[0,.999999].map(selectRaceTrack);IG.mode=oldMode;
- check('race-music-routing',normalTracks.every(f=>/^[1-6]\.mp3$/.test(f))&&new Set(normalTracks).size===6&&exTracks.join('|')==='810a.mp3|810b.mp3'&&NORMAL_RACE_BGM_GAIN===.8,JSON.stringify({normal:[...new Set(normalTracks)],normalGain:NORMAL_RACE_BGM_GAIN,ex:exTracks}));
+ check('race-music-routing',normalTracks.every(f=>/^[1-6]\.mp3$/.test(f))&&new Set(normalTracks).size===6&&exTracks.join('|')==='810a.mp3|810b.mp3'&&NORMAL_RACE_BGM_GAIN===1&&normalTracks.every(f=>AUDIO_MIX_DEFAULTS[f]===.8),JSON.stringify({normal:[...new Set(normalTracks)],runtimeGain:NORMAL_RACE_BGM_GAIN,fileGain:normalTracks.map(f=>AUDIO_MIX_DEFAULTS[f]),ex:exTracks}));
  check('ending-music-routing',['ed1','ed2','ed3','ed810'].every(k=>MUSIC_AUDIO_FILES[k]===`${k}.mp3`)&&MUSIC_AUDIO_FILES.clear==='clear.mp3'&&MUSIC_AUDIO_FILES.cut==='cut.mp3',JSON.stringify(MUSIC_AUDIO_FILES));
- check('pickup-se-gains',UI_SE_GAIN.paint===.5&&['cake1','cake2','cake3'].every(k=>UI_SE_GAIN[k]===100)&&UI_SE_GAIN.ex===8,JSON.stringify(UI_SE_GAIN));
+ check('audio-mix-gains-v90',UI_SE_GAIN.paint===audioMixGain('paint.mp3',1)&&['cake1','cake2','cake3'].every(k=>UI_SE_GAIN[k]===audioMixGain(`${k}.mp3`,1))&&AUDIO_MIX_DEFAULTS['cake1.mp3']===9.5499&&AUDIO_MIX_DEFAULTS['cake2.mp3']===1.7378&&AUDIO_MIX_DEFAULTS['cake3.mp3']===.9333&&UI_SE_GAIN.ex===audioMixGain('810.mp3',1)&&UI_SE_BOOST_KEYS.has('cake1')&&UI_SE_BOOST_KEYS.has('cake2')&&!UI_SE_BOOST_KEYS.has('cake3')&&!UI_SE_BOOST_KEYS.has('ex'),JSON.stringify(UI_SE_GAIN));
+ check('audio-mix-v88',window.BirthdayAudioMix?.storageKey===AUDIO_MIX_STORAGE_KEY&&AUDIO_MIX_DEFAULTS['countdown.tick']===1&&AUDIO_MIX_DEFAULTS['countdown.go']===1&&AUDIO_MIX_DEFAULTS['title.mp3']===.4,'file and synthesized SE gains share one persisted mix map');
  const edSchedules=[62.76,61.632,61.992,58.824].map(duration=>endingSchedule(duration,10));
  check('ending-slow-credit-schedule',edSchedules.every(s=>{const creditEnd=s.creditDelayMs/1000+s.creditDurationSeconds;return s.titleDrawStartMs>=900&&s.titleDrawStartMs<=1400&&s.creditDurationSeconds>30&&Math.abs(s.videoStartSeconds-creditEnd-ENDING_CREDIT_END_MARGIN_SECONDS)<1e-6}),JSON.stringify(edSchedules));
  const endingTimelineSource=String(startEndingTimeline),endingResumeSource=String(resumeEndingTimeline),endingRenderSource=String(renderEndingTimeline),endingWaitSource=String(waitForAudioEnd);check('ending-tab-sync-v87',endingTimelineSource.includes('visibilitychange')&&endingTimelineSource.includes('audio.pause()')&&endingTimelineSource.includes('pageshow')&&endingTimelineSource.includes('focus')&&endingResumeSource.includes('timeline.audio.play()')&&endingRenderSource.includes('endingClockSeconds')&&endingRenderSource.includes('creditsRoll.style.transform')&&endingWaitSource.includes('!document.hidden'),'ED audio, title, credits, video and final text share one pause-aware clock and recover after iOS page restoration');
  check('ex-model-full-resolution',exSprite.width===192&&exSprite.height===192,`${exSprite.width}x${exSprite.height}`);
- check('standard-se-direct-path',!UI_SE_BOOST_KEYS.has('start')&&!UI_SE_BOOST_KEYS.has('option')&&!UI_SE_BOOST_KEYS.has('bar')&&!UI_SE_BOOST_KEYS.has('pen')&&!UI_SE_BOOST_KEYS.has('paint'),'standard UI sounds bypass the boost AudioContext');
+ check('standard-se-direct-path',['start.mp3','option.mp3','bar.mp3','pen.mp3','paint.mp3'].every(file=>AUDIO_MIX_DEFAULTS[file]<=1),'standard UI sounds bypass the boost AudioContext at default mix values');
  const laneSnapshot={lane:IG.lane,visualLane:IG.visualLane,laneMove:IG.laneMove};IG.lane=0;IG.visualLane=.17;IG.laneMove={from:0,to:1,t:.1};resetRiderToCenter();check('restart-center-lane',IG.lane===1&&IG.visualLane===1&&IG.laneMove===null,JSON.stringify({lane:IG.lane,visualLane:IG.visualLane,laneMove:IG.laneMove}));Object.assign(IG,laneSnapshot);
  check('hud-removed',!document.getElementById('integratedHud'),'upper-left count/time HUD is not mounted');
  for(const n of[2,4,6,8]){const perfect=scoreCut(Array.from({length:n/2},(_,i)=>i*Math.PI/(n/2)),n);check('diameter-cut-'+n,perfect.max<1e-8&&perfect.sorted.length===n,String(perfect.max))}
@@ -8270,7 +8336,7 @@ function galleryVolume(){return Math.max(0,Math.min(1,Number(window.BirthdayFlow
 function trackName(file){return BGM_NAMES[file]||String(file||'NO MUSIC').replace(/\.mp3$/i,'').toUpperCase()}
 function setDiscTitle(file){const name=trackName(file);discText.textContent=name;player.setAttribute('aria-label',file?`BGM player: ${name}`:'BGM player')}
 function updatePlayerMotion(){const playing=!galleryAudio.paused&&!galleryAudio.ended;if(playing)player.classList.add('disc-active');player.classList.toggle('is-playing',playing);toggleButton.setAttribute('aria-label',playing?'一時停止':'再生')}
-function syncAudio(){const volume=galleryVolume();galleryAudio.volume=volume;fullVideo.volume=volume;updatePlayerMotion()}
+function syncAudio(){const volume=galleryVolume(),file=galleryAudio.dataset.file||currentBgm;galleryAudio.volume=Math.min(1,volume*audioMixGain(file,1));fullVideo.volume=volume;updatePlayerMotion()}
 function markMovieSeen(file){if(!MOVIES.some(item=>item.file===file))return false;const item=MOVIES.find(entry=>entry.file===file),was=movieUnlocked(item),saved=lsSet(MOVIE_KEY+file);if(!was)refreshUnlocks();return saved}
 function markBgmHeard(file){if(!BGM_FILES.includes(file))return false;const was=bgmUnlocked(file),saved=lsSet(BGM_KEY+file);if(roomOpen&&!was)refreshUnlocks();return saved}
 function unlockedBgm(){return BGM_FILES.filter(bgmUnlocked)}
